@@ -81,7 +81,7 @@ export function activate(context: vscode.ExtensionContext) {
 
       console.log('saved:', td.getText());
       try {
-        const updated = td.getText().replace(/\n/g, '\\n');
+        const updated = td.getText().replace(/\n/g, '\\n').replace(/\"/g, '\\"');
         console.log('updated:', updated);
 
         const { range } = editContext;
