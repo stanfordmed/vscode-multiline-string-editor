@@ -1,10 +1,10 @@
 'use strict';
 
 import * as vscode from 'vscode';
-import {MemFS} from './fileSystemProvider';
+import { MemFS } from './fileSystemProvider';
 
 const MEM_FS_SCHEMA = 'memfs_sje';
-const MEM_FS_FILE = `${MEM_FS_SCHEMA}:/multiline.txt`;
+const MEM_FS_FILE = `${MEM_FS_SCHEMA}:/multiline.sql`;
 
 interface EditTarget {
   range: vscode.Range;
@@ -51,7 +51,7 @@ function getTarget(editor: vscode.TextEditor): EditTarget | null {
         new vscode.Position(selection.start.line, start),
         new vscode.Position(selection.end.line, end)
       );
-      return {body, range};
+      return { body, range };
     }
   }
   return null;
@@ -84,7 +84,7 @@ export function activate(context: vscode.ExtensionContext) {
         const updated = td.getText().replace(/\n/g, '\\n');
         console.log('updated:', updated);
 
-        const {range} = editContext;
+        const { range } = editContext;
         editContext.editor.edit(editBuilder => {
           editBuilder.replace(range, updated);
         });
@@ -98,7 +98,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   const disposable = vscode.commands.registerCommand(
     'extension.editMultiline',
-    function() {
+    function () {
       // Get the active text editor
       const editor = vscode.window.activeTextEditor;
       editContext.editor = editor;
