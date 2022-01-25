@@ -1,3 +1,12 @@
+# SUSOM Multiline String Editor
+This is a fork of a vscode plugin that is useful for editing embedded SQL multi-line strings in WDL. 
+
+To install this plugin, download [this file](https://github.com/stanfordmed/vscode-multiline-string-editor/raw/susom-wdl/multiline-string-editor-0.0.2.vsix) use the "Install from VSIX" menu option in the Extensions view. 
+
+To make a keyboard shortcut, open the command pallete (cmd-shift-P)type "Edit as multiline string" and click the gear icon. Suggestion shortcut: `cmd-m`. 
+
+(Original README.md below)
+
 # Multiline String Editor
 
 Easily edit multiline strings that need to be encoded as single-line strings (for example, JSON strings that contain literal `\n` characters).
